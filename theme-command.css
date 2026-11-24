@@ -1,0 +1,135 @@
+/* =====================================================================
+   Trial theme: CareerCommand branding
+   Only loads when the page is opened with ?theme=command
+   (see the small script in index.html). Swaps the colour and type tokens
+   in styles.css for the CareerCommand palette:
+     Carbon #0B0E0D (background), Mist #EDF1EF (text), Pine #26473E (tiles),
+     Sage #4C8C78 (secondary), Mint #7FD9B9 (accent, used sparingly).
+   Type: Geist / Geist Mono, with Archivo for the name, like the
+   CareerCommand wordmark.
+   ===================================================================== */
+
+:root[data-theme="command"] {
+  color-scheme: dark;
+
+  --paper: #0b0e0d;            /* Carbon */
+  --ink: #edf1ef;              /* Mist */
+  --ink2: #b9c4bf;
+  --muted: #8d9a95;
+  --line: #222a27;
+  --line-strong: #2f3a36;
+  --blue: #7fd9b9;             /* Mint: links, buttons, active states */
+  --orange: #8fd0b4;           /* small number labels */
+  --teal: #6fc48f;
+  --purple: #9fb6d1;
+  --chip: #1a211e;
+  --grid: rgba(237, 241, 239, 0.035);
+
+  --surface: #101413;
+  --surface-2: #141a18;
+  --media-bg: #f4f2ec;         /* renders stay on paper so black type reads */
+  --cover-bg: #141a18;
+  --cover-grid: rgba(127, 217, 185, 0.06);
+  --hairline: rgba(237, 241, 239, 0.04);
+  --nav-bg: rgba(11, 14, 13, 0.82);
+  --hover-wash: rgba(237, 241, 239, 0.04);
+  --on-accent: #0b0e0d;
+  --on-fill: #7fd9b9;
+  --orange-ink: #8fd0b4;
+  --accent-glow: rgba(127, 217, 185, 0.18);
+  --shade-rgb: 0, 0, 0;
+  --shadow: 0 1px 0 #1a211e, 0 18px 40px -28px rgba(0, 0, 0, 0.8);
+  --shadow-up: 0 1px 0 #1a211e, 0 26px 50px -26px rgba(0, 0, 0, 0.9);
+
+  --serif: "Geist", system-ui, sans-serif;
+  --sans: "Geist", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+  --brand: "Archivo", "Geist", sans-serif;
+
+  --pine: linear-gradient(135deg, #26473e, #17322b);
+}
+
+/* ---------- Backdrop: dot grid with two slow, faint glows ---------- */
+[data-theme="command"] .grid-bg {
+  overflow: hidden; /* keeps the glows from widening the page on phones */
+  background-image: radial-gradient(rgba(237, 241, 239, 0.07) 1px, transparent 1.2px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(110% 80% at 50% 0, #000 30%, transparent 85%);
+  mask-image: radial-gradient(110% 80% at 50% 0, #000 30%, transparent 85%);
+}
+[data-theme="command"] .grid-bg::before,
+[data-theme="command"] .grid-bg::after {
+  content: ""; position: absolute; pointer-events: none; border-radius: 50%;
+  width: 60rem; height: 30rem; left: 50%; top: 0; transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(127, 217, 185, 0.14), transparent);
+  animation: ccDriftA 26s ease-in-out infinite alternate;
+}
+[data-theme="command"] .grid-bg::after {
+  width: 40rem; height: 20rem; left: 92%; top: 30rem;
+  background: radial-gradient(closest-side, rgba(76, 140, 120, 0.16), transparent);
+  animation: ccDriftB 32s ease-in-out infinite alternate;
+}
+@keyframes ccDriftA {
+  50% { transform: translate(-50%, -50%) translate(6%, 5%) scale(1.08); }
+  100% { transform: translate(-50%, -50%) translate(-5%, 3%) scale(0.96); }
+}
+@keyframes ccDriftB {
+  50% { transform: translate(-50%, -50%) translate(-7%, -4%) scale(0.94); }
+  100% { transform: translate(-50%, -50%) translate(4%, -6%) scale(1.06); }
+}
+[data-theme="command"] ::selection { background: #1e2d28; color: #a6e7ce; }
+
+/* ---------- Name: Archivo, regular + bold, one colour (like the wordmark) ---------- */
+[data-theme="command"] .wordmark,
+[data-theme="command"] .hero h1 {
+  font-family: var(--brand); font-weight: 400; letter-spacing: -0.035em; color: var(--ink);
+}
+[data-theme="command"] .wordmark .tik,
+[data-theme="command"] .hero h1 .tik { color: inherit; font-weight: 700; }
+[data-theme="command"] .wordmark { display: inline-flex; align-items: center; font-size: 21px; }
+[data-theme="command"] .wordmark #wm-b { margin-left: 0.22em; }
+[data-theme="command"] .wordmark::before { /* Pine monogram tile */
+  content: "HZ"; display: grid; place-items: center; width: 32px; height: 32px; margin-right: 10px; border-radius: 22.37%;
+  background: var(--pine); color: #7fd9b9; font: 600 12px/1 var(--mono); letter-spacing: 0;
+}
+[data-theme="command"] .caret { background: #7fd9b9; }
+[data-theme="command"] .hero h1 { font-size: clamp(2.9rem, 8vw, 5.6rem); }
+
+/* ---------- Headings: Geist, tight ---------- */
+[data-theme="command"] .band__head h2,
+[data-theme="command"] .case h3,
+[data-theme="command"] .pd__body h3,
+[data-theme="command"] .pd__body h4,
+[data-theme="command"] .xp__role,
+[data-theme="command"] .entry h3,
+[data-theme="command"] .pcard__title,
+[data-theme="command"] .pd__foot b,
+[data-theme="command"] .wts-item b {
+  font-family: var(--sans); font-weight: 600; letter-spacing: -0.025em;
+}
+[data-theme="command"] .band__head h2 { font-size: clamp(1.7rem, 3.2vw, 2.2rem); }
+[data-theme="command"] .summary,
+[data-theme="command"] .about__text p.lead,
+[data-theme="command"] .case__sum,
+[data-theme="command"] .xp__sum {
+  font-family: var(--sans); font-weight: 400; letter-spacing: -0.01em;
+}
+[data-theme="command"] .sec { color: var(--muted); }
+
+/* ---------- Buttons: quiet Mint, per the CareerCommand button ---------- */
+[data-theme="command"] .btn { border-radius: 8px; }
+[data-theme="command"] .btn-primary { background: #1e2d28; color: #a6e7ce; box-shadow: none; }
+[data-theme="command"] .btn-primary:hover { background: #7fd9b9; color: #0b0e0d; filter: none; }
+[data-theme="command"] .btn-ghost { background: transparent; color: var(--ink2); }
+[data-theme="command"] .btn-ghost:hover { border-color: #7fd9b9; color: var(--ink); }
+[data-theme="command"] .nav-links .nav-cta { border-color: var(--line-strong); color: var(--ink); }
+
+/* ---------- Tiles: Pine is for tiles, and only tiles ---------- */
+[data-theme="command"] .mono-ic,
+[data-theme="command"] .xp__logo { background: var(--pine); color: #7fd9b9; }
+[data-theme="command"] .chips li { background: var(--chip); border-color: var(--line); color: var(--ink2); }
+[data-theme="command"] .check li::before { color: #7fd9b9; }
+[data-theme="command"] .xp__ind::before { background: #7fd9b9; }
+[data-theme="command"] .pcard__cover b { color: var(--ink); }
+[data-theme="command"] .pcard:not(.is-front) { filter: brightness(0.82); }
+[data-theme="command"] .skill-tile img { filter: none; }
