@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamdan Zahid — Mechanical Engineering &amp; Business</title>
+<meta name="description" content="Hamdan Zahid — Mechanical Engineering and Business student at RMIT University, Melbourne. Experience, projects and skills.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hamdan Zahid — Mechanical Engineering &amp; Business">
+<meta property="og:description" content="Mechanical Engineering and Business student at RMIT University, Melbourne. Experience, projects and skills.">
+<meta name="theme-color" content="#FBFAF6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FBFAF6'/%3E%3Ctext x='4' y='24' font-family='Georgia,serif' font-weight='900' font-size='22' fill='%230072B2'%3EH%3C/text%3E%3Crect x='23' y='6' width='4' height='20' fill='%23E69F00'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="grid-bg" aria-hidden="true"></div>
+
+<header class="navbar">
+  <div class="nav-in">
+    <a class="wordmark" href="#top" aria-label="Back to top"><span id="wm-a"></span><span class="tik" id="wm-b"></span><span class="caret" aria-hidden="true"></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="nav-links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="wrap hero__in">
+      <p class="eyebrow f" id="hero-role" style="--d:.05s"></p>
+      <h1 class="f" id="hero-name" style="--d:.12s"></h1>
+      <p class="summary f" id="hero-summary" style="--d:.22s"></p>
+      <div class="cta-row f" style="--d:.32s">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="about">
+    <div class="wrap">
+      <header class="band__head reveal"><span class="sec">§1</span><h2>About</h2><p id="about-kicker"></p></header>
+      <div class="about" id="about-body"></div>
+    </div>
+  </section>
+
+  <section class="band" id="skills">
+    <div class="wrap">
+      <header class="band__head reveal"><span class="sec">§2</span><h2>Skills &amp; tools</h2><p id="skills-note"></p></header>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </section>
+
+  <section class="band" id="work">
+    <div class="wrap">
+      <header class="band__head reveal"><span class="sec">§3</span><h2>Work</h2><p>Where I've worked, and what I did there.</p></header>
+      <div class="xp reveal" id="xp"></div>
+    </div>
+  </section>
+
+  <section class="band" id="projects">
+    <div class="wrap">
+      <header class="band__head reveal"><span class="sec">§4</span><h2>Projects</h2><p>Things I've designed, built and tested.</p></header>
+      <div class="cases" id="cards"></div>
+    </div>
+  </section>
+
+  <section class="band" id="volunteering">
+    <div class="wrap">
+      <header class="band__head reveal"><span class="sec">§5</span><h2>Volunteering</h2></header>
+      <div class="entries" id="volunteering-list"></div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap">
+      <header class="band__head reveal"><span class="sec">§6</span><h2>Contact</h2></header>
+      <div class="contact reveal" id="contact-body"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span id="foot-text"></span>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
+<script src="content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
