@@ -131,7 +131,8 @@ window.SITE = {
     },
   ],
 
-  // ---------- Projects (shown as case studies) ----------
+  // ---------- Projects (shown in a carousel; click one for the details) ----------
+  // kind: the small label on the card, e.g. "Structures".
   // The left column lists dates, context, role and tools. Leave any of them "" to hide it.
   // image: a real photo, CAD render or screenshot, e.g. "images/wingbox.jpg".
   //        Leave "" until you have one; the project still looks complete without it.
@@ -140,6 +141,7 @@ window.SITE = {
   projects: [
     {
       title: "Wing-box design and fabrication",
+      kind: "Structures",
       dates: "Mar – Jun 2026",
       context: "RMIT University",
       role: "Design and fabrication lead",
@@ -155,6 +157,7 @@ window.SITE = {
     },
     {
       title: "Autonomous rock-collecting robot",
+      kind: "Robotics",
       dates: "Jul – Nov 2024",
       context: "Warman design and build project",
       role: "Design and fabrication lead",
@@ -169,6 +172,7 @@ window.SITE = {
     },
     {
       title: "MyLaTeX",
+      kind: "Web · LaTeX",
       dates: "",
       context: "Personal project",
       role: "Built and maintain",

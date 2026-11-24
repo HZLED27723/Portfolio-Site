@@ -68,8 +68,8 @@
 
   <section class="band" id="projects">
     <div class="wrap">
-      <header class="band__head reveal"><span class="sec">§4</span><h2>Projects</h2><p>Things I've designed, built and tested.</p></header>
-      <div class="cases" id="cards"></div>
+      <header class="band__head reveal"><span class="sec">§4</span><h2>Projects</h2><p>Things I've designed, built and tested. Pick one to see the details.</p></header>
+      <div class="ring reveal" id="cards" aria-roledescription="carousel" aria-label="Projects"></div>
     </div>
   </section>
 
@@ -92,6 +92,16 @@
   <span id="foot-text"></span>
   <a href="#top">Back to top ↑</a>
 </footer>
+
+<!-- Project details window (opened from the projects carousel) -->
+<dialog class="pd" id="pd" aria-labelledby="pd-title">
+  <button class="pd__close" type="button" data-close aria-label="Close">✕</button>
+  <div class="pd__body" id="pd-body"></div>
+  <footer class="pd__foot">
+    <button type="button" id="pd-prev"><small>← Previous</small><b></b></button>
+    <button type="button" id="pd-next"><small>Next →</small><b></b></button>
+  </footer>
+</dialog>
 
 <script src="content.js"></script>
 <script src="main.js"></script>
